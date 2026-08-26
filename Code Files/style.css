@@ -1,0 +1,443 @@
+/* =========================
+   General Reset
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.nav-links a.active {
+    font-weight: 700;
+    color: #111;
+}
+
+
+/* =========================
+   Header / Navigation
+========================= */
+
+.header {
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================
+   Logo
+========================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 48px;
+    display: block;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111;
+}
+
+
+/* =========================
+   Navigation Links
+========================= */
+
+.nav-links {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #222;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #666;
+}
+
+
+/* =========================
+   Navigation Button
+========================= */
+
+.nav-button {
+    text-decoration: none;
+
+    background-color: #111;
+    color: white;
+
+    padding: 11px 18px;
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background-color: #333;
+}
+
+/* =========================
+   Hero Section
+========================= */
+
+.hero {
+    min-height: calc(100vh - 80px);
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7fbfc 0%,
+            #ffffff 55%,
+            #fff9e8 100%
+        );
+}
+
+.hero-container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+    padding: 80px 30px;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+
+    align-items: center;
+    gap: 80px;
+}
+
+
+/* =========================
+   Hero Text
+========================= */
+
+.hero-motto {
+    margin-bottom: 14px;
+
+    color: #0b5964;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero-badge {
+    display: inline-block;
+
+    padding: 8px 14px;
+    margin-bottom: 22px;
+
+    border: 1px solid #d7e7e8;
+    border-radius: 50px;
+
+    background-color: white;
+
+    color: #0c5964;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-size: 64px;
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+
+    color: #111;
+
+    margin-bottom: 24px;
+}
+
+.hero h1 span {
+    display: block;
+
+    background: linear-gradient(
+        90deg,
+        #064f61,
+        #1d7b78,
+        #f2b705
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+}
+
+.hero-description {
+    max-width: 570px;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    color: #555;
+
+    margin-bottom: 32px;
+}
+
+
+/* =========================
+   Hero Buttons
+========================= */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+.primary-button {
+    display: inline-block;
+
+    padding: 14px 22px;
+
+    background-color: #0b5964;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-weight: 600;
+}
+
+.primary-button:hover {
+    background-color: #084650;
+}
+
+.secondary-button {
+    display: inline-block;
+
+    padding: 14px 22px;
+
+    border: 1px solid #d6d6d6;
+    border-radius: 7px;
+
+    background-color: white;
+
+    color: #555;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+.secondary-button:hover {
+    border-color: #0b5964;
+    color: #0b5964;
+}
+
+
+/* =========================
+   Hero Visual
+========================= */
+
+.hero-visual {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.opportunity-card {
+    width: 100%;
+    max-width: 420px;
+
+    background-color: white;
+
+    border: 1px solid #e7e7e7;
+    border-radius: 20px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Card top */
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+.card-category {
+    color: #666;
+    font-size: 13px;
+}
+
+.match-score {
+    background-color: #eef8f4;
+
+    color: #13795b;
+
+    padding: 7px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* Card Content */
+
+.card-label {
+    color: #999;
+
+    font-size: 13px;
+
+    margin-bottom: 8px;
+}
+
+.card-content h2 {
+    font-size: 28px;
+
+    margin-bottom: 12px;
+
+    color: #111;
+}
+
+.card-content > p:last-child {
+    color: #666;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+
+    margin-bottom: 30px;
+}
+
+
+/* Matching Details */
+
+.card-details {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+
+    padding: 18px 0;
+
+    margin-bottom: 22px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+.card-details div {
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 14px;
+}
+
+.card-details span {
+    color: #777;
+}
+
+.card-details strong {
+    color: #13795b;
+}
+
+
+/* Swipe Controls */
+
+.swipe-area {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+.swipe-area span {
+    color: #777;
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+.swipe-area button {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    font-size: 20px;
+
+    cursor: default;
+}
+
+.swipe-no {
+    background-color: #f5f5f5;
+    color: #777;
+}
+
+.swipe-yes {
+    background-color: #fff5ce;
+    color: #c58b00;
+}
+
+
+/* Concept Label */
+
+.concept-label {
+    margin-top: 15px;
+
+    color: #999;
+
+    font-size: 12px;
+}

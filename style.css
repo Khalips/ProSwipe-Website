@@ -38,6 +38,104 @@ body {
     justify-content: space-between;
 }
 
+/* =========================
+   Mobile Navigation
+========================= */
+
+.menu-toggle {
+    display: none;
+
+    background: none;
+    border: none;
+
+    font-size: 30px;
+    color: #111;
+
+    cursor: pointer;
+}
+
+.mobile-nav-button {
+    margin-top: 8px;
+}
+
+
+/* =========================
+   Tablet / Mobile Navbar
+========================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .desktop-nav-button {
+        display: none;
+    }
+
+.nav-links {
+    position: absolute;
+
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 100vw;
+
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 0;
+
+    padding: 15px 30px 25px;
+
+    background-color: white;
+
+    border-bottom: 1px solid #e5e5e5;
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+
+    z-index: 1000;
+}
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+
+        width: 100%;
+
+        padding: 13px 0;
+
+        font-size: 16px;
+    }
+
+    .mobile-nav-button {
+        display: block;
+
+        margin-top: 10px;
+    }
+
+    .mobile-nav-button .nav-button {
+        text-align: center;
+
+        padding: 12px 18px;
+
+        color: white;
+    }
+}
+
 
 /* =========================
    Logo

@@ -442,7 +442,7 @@ body {
 
     font-size: 20px;
 
-    cursor: default;
+    cursor: pointer;
 }
 
 .swipe-no {
@@ -453,6 +453,10 @@ body {
 .swipe-yes {
     background-color: #fff5ce;
     color: #c58b00;
+}
+
+.opportunity-card {
+    touch-action: pan-y;
 }
 
 

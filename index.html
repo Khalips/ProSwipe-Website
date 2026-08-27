@@ -99,19 +99,20 @@
         <!-- Hero Visual -->
         <div class="hero-visual">
 
-            <div class="opportunity-card">
+            <div class="opportunity-card" id="opportunity-card">
 
                 <div class="card-top">
 
-                    <span class="card-category">
+                    <span class="card-category" id="card-category">
                         University Programme
                     </span>
 
-                    <span class="match-score">
+                    <span class="match-score" id="match-score">
                         92% Match
                     </span>
 
                 </div>
+
 
                 <div class="card-content">
 
@@ -119,45 +120,61 @@
                         Suggested for you
                     </p>
 
-                    <h2>BSc Engineering</h2>
+                    <h2 id="card-title">
+                        BSc Engineering
+                    </h2>
 
-                    <p>
+                    <p id="card-description">
                         Your academic profile matches the
                         requirements for this opportunity.
                     </p>
 
                 </div>
 
+
                 <div class="card-details">
 
                     <div>
-                        <span>APS</span>
-                        <strong>✓ Match</strong>
+                        <span id="detail-label-1">APS</span>
+                        <strong id="detail-value-1">✓ Match</strong>
                     </div>
 
                     <div>
-                        <span>Subjects</span>
-                        <strong>✓ Match</strong>
+                        <span id="detail-label-2">Subjects</span>
+                        <strong id="detail-value-2">✓ Match</strong>
                     </div>
 
                     <div>
-                        <span>Requirements</span>
-                        <strong>✓ Match</strong>
+                        <span id="detail-label-3">Requirements</span>
+                        <strong id="detail-value-3">✓ Match</strong>
                     </div>
 
                 </div>
+
 
                 <div class="swipe-area">
 
-                    <button class="swipe-no">←</button>
+                    <button
+                        class="swipe-no"
+                        id="previous-opportunity"
+                        aria-label="Previous opportunity"
+                    >
+                        ←
+                    </button>
 
                     <span>Swipe through opportunities</span>
 
-                    <button class="swipe-yes">→</button>
+                    <button
+                        class="swipe-yes"
+                        id="next-opportunity"
+                        aria-label="Next opportunity"
+                    >
+                        →
+                    </button>
 
                 </div>
 
-            </div>
+        </div>
 
             <p class="concept-label">
                 Concept preview of the ProSwipe experience

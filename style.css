@@ -55,7 +55,7 @@ body {
 }
 
 .mobile-nav-button {
-    margin-top: 8px;
+    display: none;
 }
 
 
@@ -466,7 +466,7 @@ body {
    Tablet / Mobile Navbar
 ========================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
 
     .header {
         position: relative;

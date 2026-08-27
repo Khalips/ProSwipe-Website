@@ -62,7 +62,7 @@ navigationLinks.forEach(function (link) {
 // Reset mobile menu when returning to desktop size
 window.addEventListener("resize", function () {
 
-    if (window.innerWidth > 900) {
+    if (window.innerWidth > 1100) {
 
         navLinks.classList.remove("active");
 

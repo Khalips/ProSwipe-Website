@@ -60,127 +60,6 @@ body {
 
 
 /* =========================
-   Tablet / Mobile Navbar
-========================= */
-
-@media (max-width: 900px) {
-
-    .header {
-        position: relative;
-        z-index: 1000;
-    }
-
-    .navbar {
-        position: relative;
-        padding: 15px 24px;
-    }
-
-    /* Hamburger */
-    .menu-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        width: 44px;
-        height: 44px;
-
-        background: none;
-        border: none;
-
-        font-size: 30px;
-        color: #111;
-
-        cursor: pointer;
-
-        z-index: 1101;
-    }
-
-    /* Hide desktop button */
-    .desktop-nav-button {
-        display: none;
-    }
-
-    /* Mobile menu */
-    .nav-links {
-        position: absolute;
-
-        top: 100%;
-        left: 0;
-
-        width: 100%;
-
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: flex-start;
-
-        gap: 0;
-
-        padding: 10px 24px 24px;
-
-        background-color: white;
-
-        border-bottom: 1px solid #e5e5e5;
-
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-
-        z-index: 1100;
-
-        max-height: calc(100vh - 80px);
-        overflow-y: auto;
-    }
-
-    /* Show menu */
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links li {
-        width: 100%;
-
-        margin: 0;
-        padding: 0;
-
-        flex: none;
-    }
-
-    .nav-links a {
-        display: block;
-
-        width: 100%;
-
-        padding: 14px 0;
-
-        font-size: 16px;
-
-        text-decoration: none;
-    }
-
-    /* Mobile App Coming Soon button */
-    .mobile-nav-button {
-        display: block;
-
-        margin-top: 10px;
-    }
-
-    .mobile-nav-button .nav-button {
-        display: block;
-
-        width: 100%;
-
-        padding: 14px 18px;
-
-        background-color: #111;
-        color: white;
-
-        text-align: center;
-
-        border-radius: 6px;
-    }
-}
-
-
-/* =========================
    Logo
 ========================= */
 
@@ -581,4 +460,124 @@ body {
     color: #999;
 
     font-size: 12px;
+}
+
+/* =========================
+   Tablet / Mobile Navbar
+========================= */
+
+@media (max-width: 900px) {
+
+    .header {
+        position: relative;
+        z-index: 1000;
+    }
+
+    .navbar {
+        position: relative;
+        padding: 15px 24px;
+    }
+
+    /* Hamburger */
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 44px;
+        height: 44px;
+
+        background: none;
+        border: none;
+
+        font-size: 30px;
+        color: #111;
+
+        cursor: pointer;
+
+        z-index: 1101;
+    }
+
+    /* Hide desktop button */
+    .desktop-nav-button {
+        display: none;
+    }
+
+    /* Mobile menu */
+    .nav-links {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+        flex-direction: column;
+
+        align-items: stretch;
+        justify-content: flex-start;
+
+        gap: 0;
+
+        padding: 10px 24px 24px;
+
+        background-color: white;
+
+        border-bottom: 1px solid #e5e5e5;
+
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+
+        z-index: 1100;
+
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+
+    /* Menu is visible only when JavaScript adds active */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        flex: none;
+    }
+
+    .nav-links a {
+        display: block;
+
+        width: 100%;
+
+        padding: 14px 0;
+
+        font-size: 16px;
+
+        text-decoration: none;
+    }
+
+    /* Mobile App Coming Soon button */
+    .mobile-nav-button {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .mobile-nav-button .nav-button {
+        display: block;
+
+        width: 100%;
+
+        padding: 14px 18px;
+
+        background-color: #111;
+        color: white;
+
+        text-align: center;
+
+        border-radius: 6px;
+    }
 }

@@ -28,7 +28,7 @@ body {
     position: sticky;
     top: 0;
 
-    background-color: white;
+    background-color: rgb(229, 230, 238);
     border-bottom: 1px solid #e5e5e5;
 
     z-index: 1000;
@@ -1139,6 +1139,114 @@ body {
 }
 
 /* =========================
+   About Section
+========================= */
+
+.about-section {
+    padding: 110px 30px;
+
+    background-color: #f7faf9;
+}
+
+.about-container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+
+/* =========================
+   About Content
+========================= */
+
+.about-content {
+    max-width: 560px;
+}
+
+.about-content h2 {
+    margin-bottom: 26px;
+
+    font-size: 45px;
+    line-height: 1.15;
+
+    letter-spacing: -1.5px;
+
+    color: #111;
+}
+
+.about-content h2 span {
+    display: block;
+
+    color: #0b5964;
+}
+
+.about-content > p:not(.section-label) {
+    margin-bottom: 18px;
+
+    color: #666;
+
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+
+/* =========================
+   Company Snapshot
+========================= */
+
+.about-snapshot {
+    display: flex;
+
+    flex-direction: column;
+
+    border-top: 1px solid #dfe6e4;
+}
+
+.snapshot-item {
+    display: grid;
+
+    grid-template-columns: 55px 1fr;
+
+    gap: 22px;
+
+    padding: 28px 0;
+
+    border-bottom: 1px solid #dfe6e4;
+}
+
+.snapshot-number {
+    color: #0b5964;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.snapshot-item h3 {
+    margin-bottom: 9px;
+
+    color: #111;
+
+    font-size: 20px;
+}
+
+.snapshot-item p {
+    color: #666;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* =========================
    Tablet / Mobile Navbar
 ========================= */
 
@@ -1402,6 +1510,34 @@ body {
 
     .future-banner h3 {
         font-size: 34px;
+    }
+
+    /* About Section - Tablet */
+
+    .about-section {
+        padding: 85px 30px;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+    .about-content {
+        max-width: 700px;
+    }
+
+    .about-content h2 {
+        font-size: 40px;
+    }
+
+    .about-content > p:not(.section-label) {
+        max-width: 680px;
+    }
+
+    .about-snapshot {
+        max-width: 750px;
     }
 }
 
@@ -1678,6 +1814,42 @@ body {
     }
 
     .future-banner-content > p:last-child {
+        font-size: 15px;
+    }
+
+    /* About Section - Phone */
+
+    .about-section {
+        padding: 70px 20px;
+    }
+
+    .about-container {
+        gap: 40px;
+    }
+
+    .about-content h2 {
+        font-size: 34px;
+
+        letter-spacing: -1px;
+    }
+
+    .about-content > p:not(.section-label) {
+        font-size: 15px;
+    }
+
+    .snapshot-item {
+        grid-template-columns: 42px 1fr;
+
+        gap: 14px;
+
+        padding: 24px 0;
+    }
+
+    .snapshot-item h3 {
+        font-size: 19px;
+    }
+
+    .snapshot-item p {
         font-size: 15px;
     }
 }

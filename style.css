@@ -744,6 +744,162 @@ body {
     color: #666;
 }
 
+/* =========================
+   How It Works Section
+========================= */
+
+.how-it-works {
+    padding: 110px 30px;
+
+    background-color: #f7faf9;
+}
+
+.how-it-works-container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================
+   How It Works Heading
+========================= */
+
+.how-it-works-heading {
+    max-width: 720px;
+
+    margin: 0 auto 65px;
+
+    text-align: center;
+}
+
+.how-it-works-heading h2 {
+    margin-bottom: 20px;
+
+    font-size: 46px;
+    line-height: 1.15;
+
+    letter-spacing: -1.5px;
+
+    color: #111;
+}
+
+.how-it-works-heading h2 span {
+    color: #0b5964;
+}
+
+.how-it-works-heading > p:last-child {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    color: #666;
+}
+
+
+/* =========================
+   How It Works Steps
+========================= */
+
+.steps-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+    position: relative;
+}
+
+
+/* Step Card */
+
+.step-card {
+    position: relative;
+
+    padding: 30px 25px;
+
+    background-color: white;
+
+    border: 1px solid #e4e9e8;
+    border-radius: 16px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.06);
+}
+
+
+/* Step Number */
+
+.step-number {
+    width: 48px;
+    height: 48px;
+
+    margin-bottom: 26px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #0b5964;
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* Step Text */
+
+.step-card h3 {
+    margin-bottom: 14px;
+
+    font-size: 20px;
+
+    color: #111;
+}
+
+.step-card p {
+    font-size: 15px;
+    line-height: 1.7;
+
+    color: #666;
+}
+
+.steps-grid::before {
+    content: "";
+
+    position: absolute;
+
+    top: 54px;
+    left: 7%;
+    right: 7%;
+
+    height: 2px;
+
+    background-color: #dbe8e6;
+
+    z-index: 0;
+}
+
+.step-card {
+    z-index: 1;
+}
 
 /* =========================
    Tablet / Mobile Navbar
@@ -954,6 +1110,28 @@ body {
     .solution-description {
         max-width: 650px;
     }
+
+    /* How It Works - Tablet */
+
+    .how-it-works {
+        padding: 85px 30px;
+    }
+
+    .how-it-works-heading {
+        margin-bottom: 50px;
+    }
+
+    .how-it-works-heading h2 {
+        font-size: 40px;
+    }
+
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps-grid::before {
+        display: none;
+    }
 }
 
 /* =========================
@@ -1124,5 +1302,46 @@ body {
 
     .solution-feature p {
         font-size: 15px;
+    }
+
+    /* How It Works - Phone */
+
+    .how-it-works {
+        padding: 70px 20px;
+    }
+
+    .how-it-works-heading {
+        margin-bottom: 40px;
+    }
+
+    .how-it-works-heading h2 {
+        font-size: 34px;
+
+        letter-spacing: -1px;
+    }
+
+    .how-it-works-heading > p:last-child {
+        font-size: 16px;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+    .step-card {
+        padding: 24px;
+    }
+
+    .step-number {
+        width: 44px;
+        height: 44px;
+
+        margin-bottom: 20px;
+    }
+
+    .step-card h3 {
+        font-size: 19px;
     }
 }

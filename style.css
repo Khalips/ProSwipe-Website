@@ -616,6 +616,134 @@ body {
     line-height: 1.7;
 }
 
+/* =========================
+   Solution Section
+========================= */
+
+.solution-section {
+    padding: 110px 30px;
+
+    background-color: white;
+}
+
+.solution-container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+
+/* =========================
+   Solution Content
+========================= */
+
+.solution-content {
+    max-width: 520px;
+}
+
+.solution-content h2 {
+    margin-bottom: 24px;
+
+    font-size: 48px;
+    line-height: 1.12;
+
+    letter-spacing: -1.5px;
+
+    color: #111;
+}
+
+.solution-content h2 span {
+    display: block;
+
+    color: #0b5964;
+}
+
+.solution-description {
+    font-size: 17px;
+
+    line-height: 1.75;
+
+    color: #666;
+}
+
+
+/* =========================
+   Solution Features
+========================= */
+
+.solution-features {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+}
+
+.solution-feature {
+    display: grid;
+
+    grid-template-columns: 65px 1fr;
+
+    gap: 22px;
+
+    padding: 30px 0;
+
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.solution-feature:first-child {
+    border-top: 1px solid #e5e5e5;
+}
+
+
+/* Feature Number */
+
+.solution-number {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: #eef6f5;
+
+    color: #0b5964;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* Feature Text */
+
+.solution-feature h3 {
+    margin-bottom: 10px;
+
+    font-size: 21px;
+
+    color: #111;
+}
+
+.solution-feature p {
+    max-width: 570px;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    color: #666;
+}
+
 
 /* =========================
    Tablet / Mobile Navbar
@@ -802,6 +930,30 @@ body {
     .problem-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    /* Solution Section - Tablet */
+
+    .solution-section {
+        padding: 85px 30px;
+    }
+
+    .solution-container {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+    .solution-content {
+        max-width: 700px;
+    }
+
+    .solution-content h2 {
+        font-size: 42px;
+    }
+
+    .solution-description {
+        max-width: 650px;
+    }
 }
 
 /* =========================
@@ -931,5 +1083,46 @@ body {
 
     .problem-number {
         margin-bottom: 22px;
+    }
+
+    /* Solution Section - Phone */
+
+    .solution-section {
+        padding: 70px 20px;
+    }
+
+    .solution-container {
+        gap: 40px;
+    }
+
+    .solution-content h2 {
+        font-size: 35px;
+
+        letter-spacing: -1px;
+    }
+
+    .solution-description {
+        font-size: 16px;
+    }
+
+    .solution-feature {
+        grid-template-columns: 50px 1fr;
+
+        gap: 16px;
+
+        padding: 24px 0;
+    }
+
+    .solution-number {
+        width: 42px;
+        height: 42px;
+    }
+
+    .solution-feature h3 {
+        font-size: 19px;
+    }
+
+    .solution-feature p {
+        font-size: 15px;
     }
 }

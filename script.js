@@ -699,3 +699,103 @@ if (prefersReducedMotion) {
         300
     );
 }
+
+/* =========================
+   Active Navbar Highlighting
+========================= */
+
+// Select only the main navbar links that point to page sections
+const mainNavLinks =
+    document.querySelectorAll('#nav-links a[href^="#"]');
+
+
+// Create a list of the sections referenced by the navbar
+const pageSections = [];
+
+mainNavLinks.forEach(function (link) {
+
+    const sectionId =
+        link.getAttribute("href");
+
+    // Ignore empty "#" links if any still exist
+    if (sectionId === "#") {
+        return;
+    }
+
+    const section =
+        document.querySelector(sectionId);
+
+    if (section) {
+        pageSections.push(section);
+    }
+});
+
+
+/*
+    Updates the active navbar link based on
+    the section currently being viewed.
+*/
+function setActiveNavLink(sectionId) {
+
+    mainNavLinks.forEach(function (link) {
+
+        link.classList.remove("active");
+
+        if (
+            link.getAttribute("href") ===
+            "#" + sectionId
+        ) {
+
+            link.classList.add("active");
+        }
+    });
+}
+
+
+/* =========================
+   Observe Page Sections
+========================= */
+
+const navigationObserver =
+    new IntersectionObserver(
+
+        function (entries) {
+
+            entries.forEach(function (entry) {
+
+                /*
+                    A section becomes active when
+                    it enters the central viewing
+                    area of the screen.
+                */
+                if (entry.isIntersecting) {
+
+                    setActiveNavLink(
+                        entry.target.id
+                    );
+                }
+            });
+        },
+
+        {
+            /*
+                Shrink the observed area from the
+                top and bottom.
+
+                This helps compensate for the sticky
+                navbar and makes the active section
+                change around the middle of the screen.
+            */
+            rootMargin:
+                "-35% 0px -55% 0px",
+
+            threshold: 0
+        }
+    );
+
+
+// Observe every page section
+pageSections.forEach(function (section) {
+
+    navigationObserver.observe(section);
+});

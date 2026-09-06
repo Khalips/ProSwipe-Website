@@ -111,18 +111,60 @@ html {
 
     display: flex;
     align-items: center;
+
     gap: 28px;
 }
 
+
 .nav-links a {
+    position: relative;
+
     text-decoration: none;
+
     color: #222;
+
     font-size: 15px;
     font-weight: 500;
+
+    transition:
+        color var(--motion-fast) var(--motion-ease);
 }
 
+
+/* Normal hover effect */
+
 .nav-links a:hover {
-    color: #666;
+    color: #0b5964;
+}
+
+
+/* =========================
+   Active Navigation Link
+========================= */
+
+.nav-links a.active {
+    color: #0b5964;
+
+    font-weight: 600;
+}
+
+
+/* Gold underline for active section */
+
+.nav-links a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: #f2b705;
+
+    border-radius: 2px;
 }
 
 
@@ -2003,6 +2045,18 @@ html {
         text-align: center;
 
         border-radius: 6px;
+    }
+
+    /* Active link on mobile */
+
+    .nav-links a.active {
+        color: #0b5964;
+        font-weight: 600;
+    }
+
+
+    .nav-links a.active::after {
+        display: none;
     }
 }
 

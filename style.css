@@ -17,6 +17,20 @@ body {
     color: #111;
 }
 
+:root {
+    /* Animation timing */
+    --motion-fast: 0.2s;
+    --motion-medium: 0.4s;
+    --motion-slow: 0.7s;
+
+    /* Smooth easing */
+    --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 
 /* =========================
    Header / Navigation
@@ -28,7 +42,7 @@ body {
     position: sticky;
     top: 0;
 
-    background-color: rgb(199, 199, 223);
+    background-color: rgb(209, 209, 221);
     border-bottom: 1px solid #ebe0e0;
 
     z-index: 1000;
@@ -212,8 +226,17 @@ body {
     margin-bottom: 24px;
 }
 
-.hero h1 span {
+/* First line of Hero heading */
+.typed-main {
     display: block;
+
+    color: #111;
+}
+
+
+/* Highlighted second line */
+.typed-highlight {
+    display: inline;
 
     background: linear-gradient(
         90deg,
@@ -237,6 +260,48 @@ body {
     color: #555;
 
     margin-bottom: 32px;
+}
+
+/* =========================
+   Hero Typing Animation
+========================= */
+
+.typed-highlight {
+    color: #0b5964;
+}
+
+.typing-cursor {
+    display: inline-block;
+
+    width: 3px;
+    height: 0.9em;
+
+    margin-left: 5px;
+
+    background-color: #0b5964;
+
+    vertical-align: -0.05em;
+
+    animation: cursorBlink 0.7s infinite;
+}
+
+.typing-cursor.finished {
+    animation: none;
+    opacity: 0;
+}
+
+
+@keyframes cursorBlink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
 }
 
 
@@ -469,6 +534,74 @@ body {
 
     font-size: 12px;
 }
+
+
+/* =========================
+   Opportunity Card Swipe
+========================= */
+
+.opportunity-card {
+    transition:
+        transform 0.35s var(--motion-ease),
+        opacity 0.35s var(--motion-ease);
+
+    will-change: transform, opacity;
+}
+
+
+/* Card leaving to the left */
+
+.opportunity-card.swipe-out-left {
+    transform: translateX(-70px) rotate(-1deg);
+
+    opacity: 0;
+}
+
+
+/* Card leaving to the right */
+
+.opportunity-card.swipe-out-right {
+    transform: translateX(70px) rotate(1deg);
+
+    opacity: 0;
+}
+
+
+/* New card begins just outside on the right */
+
+.opportunity-card.swipe-in-right {
+    transform: translateX(70px);
+
+    opacity: 0;
+
+    transition: none;
+}
+
+
+/* New card begins just outside on the left */
+
+.opportunity-card.swipe-in-left {
+    transform: translateX(-70px);
+
+    opacity: 0;
+
+    transition: none;
+}
+
+.swipe-area button {
+    transition:
+        transform var(--motion-fast) var(--motion-ease),
+        background-color var(--motion-fast) var(--motion-ease);
+}
+
+.swipe-area button:hover {
+    transform: scale(1.08);
+}
+
+.swipe-area button:active {
+    transform: scale(0.92);
+}
+
 
 /* =========================
    Problem Section
@@ -1426,8 +1559,8 @@ body {
     background:
         linear-gradient(
             120deg,
-            #27b7d1,
-            #0b686d
+            #43bfd5,
+            #03464a
         );
 
     text-align: center;
@@ -1679,6 +1812,67 @@ body {
     color: #91aaad;
 
     font-size: 13px;
+}
+
+
+/* =========================
+   Scroll Reveal Animations
+========================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity var(--motion-slow) var(--motion-ease),
+        transform var(--motion-slow) var(--motion-ease);
+}
+
+/* JavaScript adds this class when element enters the screen */
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* Stagger delays for groups of cards */
+
+.reveal-delay-1 {
+    transition-delay: 0.18s;
+}
+
+.reveal-delay-2 {
+    transition-delay: 0.36s;
+}
+
+.reveal-delay-3 {
+    transition-delay: 0.54s;
+}
+
+.reveal-delay-4 {
+    transition-delay: 0.72s;
+}
+
+
+/* =========================
+   Reduced Motion Support
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .reveal {
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+    }
 }
 
 

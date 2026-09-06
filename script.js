@@ -2,6 +2,15 @@ console.log("ProSwipe website loaded successfully.");
 
 
 /* =========================
+   Reduced Motion Preference
+========================= */
+
+// Check whether the user prefers reduced animations
+const prefersReducedMotion =
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+
+/* =========================
    Mobile Navigation
 ========================= */
 
@@ -46,7 +55,8 @@ menuToggle.addEventListener("click", function () {
 
 
 // Close menu when a navigation link is clicked
-const navigationLinks = document.querySelectorAll("#nav-links a");
+const navigationLinks =
+    document.querySelectorAll("#nav-links a");
 
 navigationLinks.forEach(function (link) {
 
@@ -55,6 +65,11 @@ navigationLinks.forEach(function (link) {
         navLinks.classList.remove("active");
 
         menuToggle.textContent = "☰";
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+        );
 
         menuToggle.setAttribute(
             "aria-expanded",
@@ -67,11 +82,21 @@ navigationLinks.forEach(function (link) {
 // Reset mobile menu when returning to desktop size
 window.addEventListener("resize", function () {
 
-    if (window.innerWidth > 900) {
+    /*
+        The CSS changes to the hamburger navigation
+        at 1100px, so JavaScript should use the same
+        breakpoint.
+    */
+    if (window.innerWidth > 1100) {
 
         navLinks.classList.remove("active");
 
         menuToggle.textContent = "☰";
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+        );
 
         menuToggle.setAttribute(
             "aria-expanded",
@@ -89,7 +114,9 @@ const opportunities = [
 
     {
         category: "University Programme",
+
         match: "92% Match",
+
         title: "BSc Engineering",
 
         description:
@@ -104,7 +131,9 @@ const opportunities = [
 
     {
         category: "Bursary Opportunity",
+
         match: "88% Match",
+
         title: "STEM Support Bursary",
 
         description:
@@ -124,25 +153,44 @@ const opportunities = [
    Opportunity Card Elements
 ========================= */
 
-const cardCategory = document.getElementById("card-category");
-const matchScore = document.getElementById("match-score");
+const cardCategory =
+    document.getElementById("card-category");
 
-const cardTitle = document.getElementById("card-title");
-const cardDescription = document.getElementById("card-description");
+const matchScore =
+    document.getElementById("match-score");
 
-const detailLabel1 = document.getElementById("detail-label-1");
-const detailValue1 = document.getElementById("detail-value-1");
+const cardTitle =
+    document.getElementById("card-title");
 
-const detailLabel2 = document.getElementById("detail-label-2");
-const detailValue2 = document.getElementById("detail-value-2");
+const cardDescription =
+    document.getElementById("card-description");
 
-const detailLabel3 = document.getElementById("detail-label-3");
-const detailValue3 = document.getElementById("detail-value-3");
+const detailLabel1 =
+    document.getElementById("detail-label-1");
 
-const previousButton = document.getElementById("previous-opportunity");
-const nextButton = document.getElementById("next-opportunity");
+const detailValue1 =
+    document.getElementById("detail-value-1");
 
-const opportunityCard = document.getElementById("opportunity-card");
+const detailLabel2 =
+    document.getElementById("detail-label-2");
+
+const detailValue2 =
+    document.getElementById("detail-value-2");
+
+const detailLabel3 =
+    document.getElementById("detail-label-3");
+
+const detailValue3 =
+    document.getElementById("detail-value-3");
+
+const previousButton =
+    document.getElementById("previous-opportunity");
+
+const nextButton =
+    document.getElementById("next-opportunity");
+
+const opportunityCard =
+    document.getElementById("opportunity-card");
 
 
 /* =========================
@@ -150,6 +198,13 @@ const opportunityCard = document.getElementById("opportunity-card");
 ========================= */
 
 let currentOpportunity = 0;
+
+
+/*
+    Prevent another swipe from starting while
+    the current swipe animation is still running.
+*/
+let isSwiping = false;
 
 
 /* =========================
@@ -160,11 +215,14 @@ function displayOpportunity(index) {
 
     const opportunity = opportunities[index];
 
-    cardCategory.textContent = opportunity.category;
+    cardCategory.textContent =
+        opportunity.category;
 
-    matchScore.textContent = opportunity.match;
+    matchScore.textContent =
+        opportunity.match;
 
-    cardTitle.textContent = opportunity.title;
+    cardTitle.textContent =
+        opportunity.title;
 
     cardDescription.textContent =
         opportunity.description;
@@ -193,38 +251,199 @@ function displayOpportunity(index) {
 
 
 /* =========================
-   Next Opportunity
+   Smooth Card Swipe
 ========================= */
 
-nextButton.addEventListener("click", function () {
+function swipeOpportunity(direction, updateOpportunity) {
 
-    currentOpportunity++;
+    /*
+        If the user prefers reduced motion,
+        immediately change the opportunity
+        without performing the swipe animation.
+    */
+    if (prefersReducedMotion) {
 
-    if (currentOpportunity >= opportunities.length) {
+        updateOpportunity();
 
-        currentOpportunity = 0;
+        return;
     }
 
-    displayOpportunity(currentOpportunity);
-});
+
+    /*
+        Prevent several clicks or swipes from
+        interfering with the current animation.
+    */
+    if (isSwiping) {
+
+        return;
+    }
+
+    isSwiping = true;
+
+
+    let swipeOutClass;
+    let swipeInClass;
+
+
+    /*
+        NEXT OPPORTUNITY
+
+        Current card leaves to the left.
+        New card enters from the right.
+    */
+    if (direction === "next") {
+
+        swipeOutClass = "swipe-out-left";
+
+        swipeInClass = "swipe-in-right";
+    }
+
+
+    /*
+        PREVIOUS OPPORTUNITY
+
+        Current card leaves to the right.
+        New card enters from the left.
+    */
+    else {
+
+        swipeOutClass = "swipe-out-right";
+
+        swipeInClass = "swipe-in-left";
+    }
+
+
+    // Animate the current card out
+    opportunityCard.classList.add(
+        swipeOutClass
+    );
+
+
+    /*
+        Wait for the outgoing animation to finish
+        before changing the content.
+    */
+    setTimeout(function () {
+
+        /*
+            Update the opportunity while the
+            card is invisible.
+        */
+        updateOpportunity();
+
+
+        // Remove outgoing position
+        opportunityCard.classList.remove(
+            swipeOutClass
+        );
+
+
+        /*
+            Place the new opportunity just outside
+            the card area.
+        */
+        opportunityCard.classList.add(
+            swipeInClass
+        );
+
+
+        /*
+            Force the browser to register the
+            new starting position before removing
+            the class.
+
+            This allows the transition back to
+            the centre to actually animate.
+        */
+        void opportunityCard.offsetWidth;
+
+
+        // Animate the new opportunity into view
+        opportunityCard.classList.remove(
+            swipeInClass
+        );
+
+
+        /*
+            Allow another swipe once the incoming
+            animation has finished.
+        */
+        setTimeout(function () {
+
+            isSwiping = false;
+
+        }, 350);
+
+    }, 350);
+}
 
 
 /* =========================
-   Previous Opportunity
+   Show Next Opportunity
 ========================= */
 
-previousButton.addEventListener("click", function () {
+function showNextOpportunity() {
 
-    currentOpportunity--;
+    swipeOpportunity("next", function () {
 
-    if (currentOpportunity < 0) {
+        currentOpportunity++;
 
-        currentOpportunity =
-            opportunities.length - 1;
-    }
+        // Return to the first item after the last one
+        if (
+            currentOpportunity >=
+            opportunities.length
+        ) {
 
-    displayOpportunity(currentOpportunity);
-});
+            currentOpportunity = 0;
+        }
+
+        displayOpportunity(
+            currentOpportunity
+        );
+    });
+}
+
+
+/* =========================
+   Show Previous Opportunity
+========================= */
+
+function showPreviousOpportunity() {
+
+    swipeOpportunity("previous", function () {
+
+        currentOpportunity--;
+
+        // Move to the final item before the first one
+        if (currentOpportunity < 0) {
+
+            currentOpportunity =
+                opportunities.length - 1;
+        }
+
+        displayOpportunity(
+            currentOpportunity
+        );
+    });
+}
+
+
+/* =========================
+   Opportunity Buttons
+========================= */
+
+// Right arrow - next opportunity
+nextButton.addEventListener(
+    "click",
+    showNextOpportunity
+);
+
+
+// Left arrow - previous opportunity
+previousButton.addEventListener(
+    "click",
+    showPreviousOpportunity
+);
 
 
 /* =========================
@@ -269,36 +488,214 @@ function handleSwipe() {
     const minimumSwipeDistance = 50;
 
 
-    /* Swipe Left - Next Opportunity */
+    /*
+        Swipe finger LEFT
+        -> show NEXT opportunity
+    */
+    if (
+        swipeDistance <
+        -minimumSwipeDistance
+    ) {
 
-    if (swipeDistance < -minimumSwipeDistance) {
-
-        currentOpportunity++;
-
-        if (
-            currentOpportunity >=
-            opportunities.length
-        ) {
-
-            currentOpportunity = 0;
-        }
-
-        displayOpportunity(currentOpportunity);
+        showNextOpportunity();
     }
 
 
-    /* Swipe Right - Previous Opportunity */
+    /*
+        Swipe finger RIGHT
+        -> show PREVIOUS opportunity
+    */
+    else if (
+        swipeDistance >
+        minimumSwipeDistance
+    ) {
 
-    if (swipeDistance > minimumSwipeDistance) {
-
-        currentOpportunity--;
-
-        if (currentOpportunity < 0) {
-
-            currentOpportunity =
-                opportunities.length - 1;
-        }
-
-        displayOpportunity(currentOpportunity);
+        showPreviousOpportunity();
     }
+}
+
+
+/* =========================
+   Scroll Reveal Animation
+========================= */
+
+// Find all elements that have the "reveal" class
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+// Create an observer that checks when
+// elements enter the screen
+const revealObserver =
+    new IntersectionObserver(
+
+        function (entries, observer) {
+
+            entries.forEach(function (entry) {
+
+                /*
+                    Animate the element once it
+                    becomes visible.
+                */
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add(
+                        "visible"
+                    );
+
+                    /*
+                        Stop watching the element
+                        after it has animated once.
+                    */
+                    observer.unobserve(
+                        entry.target
+                    );
+                }
+            });
+        },
+
+        {
+            // Start when about 15% is visible
+            threshold: 0.15,
+
+            // Slightly delay the bottom trigger
+            rootMargin: "0px 0px -40px 0px"
+        }
+    );
+
+
+// Start observing every reveal element
+revealElements.forEach(function (element) {
+
+    revealObserver.observe(element);
+});
+
+
+/* =========================
+   Hero Typing Animation
+========================= */
+
+const typedMain =
+    document.getElementById("typed-main");
+
+const typedHighlight =
+    document.getElementById("typed-highlight");
+
+const typingCursor =
+    document.querySelector(".typing-cursor");
+
+
+// Text used in the Hero heading
+const mainText =
+    "Find opportunities";
+
+const highlightText =
+    "that fit you.";
+
+
+// Typing speed in milliseconds
+const typingSpeed = 45;
+
+
+// Keeps track of the current character
+let currentIndex = 0;
+
+
+/* =========================
+   Type Main Hero Text
+========================= */
+
+function typeMainText() {
+
+    if (currentIndex < mainText.length) {
+
+        typedMain.textContent +=
+            mainText[currentIndex];
+
+        currentIndex++;
+
+        setTimeout(
+            typeMainText,
+            typingSpeed
+        );
+
+    } else {
+
+        /*
+            Reset the index before starting
+            the highlighted second line.
+        */
+        currentIndex = 0;
+
+        typeHighlightText();
+    }
+}
+
+
+/* =========================
+   Type Highlighted Hero Text
+========================= */
+
+function typeHighlightText() {
+
+    if (
+        currentIndex <
+        highlightText.length
+    ) {
+
+        typedHighlight.textContent +=
+            highlightText[currentIndex];
+
+        currentIndex++;
+
+        setTimeout(
+            typeHighlightText,
+            typingSpeed
+        );
+
+    } else {
+
+        /*
+            Allow the cursor to blink briefly
+            after typing has finished.
+        */
+        setTimeout(function () {
+
+            typingCursor.classList.add(
+                "finished"
+            );
+
+        }, 600);
+    }
+}
+
+
+/* =========================
+   Start Hero Typing
+========================= */
+
+if (prefersReducedMotion) {
+
+    /*
+        Users who prefer reduced motion see
+        the complete heading immediately.
+    */
+
+    typedMain.textContent =
+        mainText;
+
+    typedHighlight.textContent =
+        highlightText;
+
+    typingCursor.classList.add(
+        "finished"
+    );
+
+} else {
+
+    // Small delay before typing begins
+    setTimeout(
+        typeMainText,
+        300
+    );
 }

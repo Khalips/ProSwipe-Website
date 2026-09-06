@@ -1426,7 +1426,7 @@ body {
     background:
         linear-gradient(
             120deg,
-            #074f5c,
+            #27b7d1,
             #0b686d
         );
 
@@ -1540,6 +1540,145 @@ body {
     font-weight: 600;
 
     letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+.footer {
+    padding: 55px 30px 25px;
+
+    background-color: #062f36;
+
+    color: white;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto 40px;
+
+    display: grid;
+    grid-template-columns: 1.2fr 1.5fr 0.7fr;
+
+    gap: 50px;
+
+    align-items: start;
+}
+
+
+/* =========================
+   Footer Brand
+========================= */
+
+.footer-logo {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 12px;
+
+    text-decoration: none;
+}
+
+.footer-logo img {
+    width: 42px;
+
+    display: block;
+}
+
+.footer-logo span {
+    color: white;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.footer-brand p {
+    color: #b9d1d3;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   Footer Navigation
+========================= */
+
+.footer-navigation {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 16px 24px;
+}
+
+.footer-navigation a {
+    color: #d8e5e6;
+
+    font-size: 14px;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.footer-navigation a:hover {
+    color: #f2c94c;
+}
+
+
+/* =========================
+   Footer Social Links
+========================= */
+
+.footer-socials {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.footer-socials a {
+    color: #d8e5e6;
+
+    font-size: 14px;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.footer-socials a:hover {
+    color: #f2c94c;
+}
+
+
+/* =========================
+   Footer Bottom
+========================= */
+
+.footer-bottom {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding-top: 22px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-bottom p {
+    color: #91aaad;
+
+    font-size: 13px;
 }
 
 
@@ -1930,6 +2069,25 @@ body {
 
     .contact-section h2 {
         font-size: 40px;
+    }
+
+
+    /* -----------------------------------------------------
+    Footer - Tablet
+   ----------------------------------------------------- */
+
+    .footer {
+        padding: 50px 30px 25px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 40px;
+    }
+
+    .footer-socials {
+        flex-direction: row;
     }
 }
 
@@ -2380,5 +2538,42 @@ body {
         width: 100%;
 
         text-align: center;
+    }
+
+
+    /* -----------------------------------------------------
+   Footer - Phone
+   ----------------------------------------------------- */
+
+    .footer {
+        padding: 45px 20px 22px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        margin-bottom: 30px;
+    }
+
+    .footer-navigation {
+        flex-direction: column;
+
+        gap: 14px;
+    }
+
+    .footer-socials {
+        flex-direction: row;
+
+        gap: 20px;
+    }
+
+    .footer-bottom {
+        padding-top: 20px;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
     }
 }

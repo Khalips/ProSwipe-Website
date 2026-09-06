@@ -1246,6 +1246,176 @@ body {
 }
 
 
+/* =========================
+   Team Section
+========================= */
+
+.team-section {
+    padding: 90px 30px;
+
+    background-color: #f7faf9;
+}
+
+.team-container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================
+   Team Heading
+========================= */
+
+.team-heading {
+    max-width: 700px;
+
+    margin: 0 auto 48px;
+
+    text-align: center;
+}
+
+.team-heading h2 {
+    margin-bottom: 18px;
+
+    font-size: 46px;
+    line-height: 1.15;
+
+    letter-spacing: -1.5px;
+
+    color: #111;
+}
+
+.team-heading h2 span {
+    color: #0b5964;
+}
+
+.team-heading > p:last-child {
+    max-width: 620px;
+
+    margin: 0 auto;
+
+    color: #666;
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   Team Grid
+========================= */
+
+.team-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================
+   Team Card
+========================= */
+
+.team-card {
+    padding: 28px;
+
+    background-color: white;
+
+    border: 1px solid #e3e9e8;
+    border-radius: 18px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #cadbd9;
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================
+   Role Mark
+========================= */
+
+.team-initials {
+    width: 62px;
+    height: 62px;
+
+    margin-bottom: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #074f5c,
+            #0b7473
+        );
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   Team Text
+========================= */
+
+.team-founder-label {
+    margin-bottom: 7px;
+
+    color: #0b5964;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.6px;
+}
+
+.team-card h3 {
+    margin-bottom: 5px;
+
+    color: #111;
+
+    font-size: 21px;
+}
+
+.team-role {
+    margin-bottom: 18px;
+
+    color: #777;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.team-description {
+    color: #666;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
 /* =========================================================
    TABLET / MOBILE NAVIGATION
    ========================================================= */
@@ -1602,8 +1772,28 @@ body {
     .about-snapshot {
         max-width: 750px;
     }
-}
 
+
+    /* -----------------------------------------------------
+    Team Section
+   ----------------------------------------------------- */
+
+    .team-section {
+        padding: 75px 30px;
+    }
+
+    .team-heading {
+        margin-bottom: 42px;
+    }
+
+    .team-heading h2 {
+        font-size: 40px;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
 
 /* =========================================================
@@ -1984,5 +2174,45 @@ body {
 
     .snapshot-item p {
         font-size: 15px;
+    }
+
+
+    /* -----------------------------------------------------
+   Team Section
+   ----------------------------------------------------- */
+
+    .team-section {
+        padding: 60px 20px;
+    }
+
+    .team-heading {
+        margin-bottom: 35px;
+    }
+
+    .team-heading h2 {
+        font-size: 34px;
+
+        letter-spacing: -1px;
+    }
+
+    .team-heading > p:last-child {
+        font-size: 15px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+    .team-card {
+        padding: 24px;
+    }
+
+    .team-initials {
+        width: 56px;
+        height: 56px;
+
+        margin-bottom: 20px;
     }
 }

@@ -477,7 +477,7 @@ body {
 .problem-section {
     background-color: #f7faf9;
 
-    padding: 100px 30px;
+    padding: 85px 30px;
 }
 
 .problem-container {
@@ -495,7 +495,7 @@ body {
 .problem-heading {
     max-width: 760px;
 
-    margin: 0 auto 60px;
+    margin: 0 auto 45px;
 
     text-align: center;
 }
@@ -551,8 +551,6 @@ body {
 }
 
 .problem-card {
-    min-height: 280px;
-
     padding: 28px;
 
     background-color: white;
@@ -621,7 +619,7 @@ body {
 ========================= */
 
 .solution-section {
-    padding: 110px 30px;
+    padding: 90px 30px;
 
     background-color: white;
 }
@@ -749,7 +747,7 @@ body {
 ========================= */
 
 .how-it-works {
-    padding: 110px 30px;
+    padding: 90px 30px;
 
     background-color: #f7faf9;
 }
@@ -769,7 +767,7 @@ body {
 .how-it-works-heading {
     max-width: 720px;
 
-    margin: 0 auto 65px;
+    margin: 0 auto 50px;
 
     text-align: center;
 }
@@ -906,7 +904,7 @@ body {
 ========================= */
 
 .opportunities-section {
-    padding: 110px 30px;
+    padding: 90px 30px;
 
     background-color: white;
 }
@@ -926,7 +924,7 @@ body {
 .opportunities-heading {
     max-width: 720px;
 
-    margin: 0 auto 60px;
+    margin: 0 auto 48px;
 
     text-align: center;
 }
@@ -977,6 +975,9 @@ body {
 
 .opportunity-type-card {
     padding: 30px;
+
+    display: flex;
+    flex-direction: column;
 
     background-color: #f8fbfa;
 
@@ -1047,8 +1048,6 @@ body {
 }
 
 .opportunity-type-description {
-    min-height: 128px;
-
     margin-bottom: 25px;
 
     color: #666;
@@ -1061,10 +1060,10 @@ body {
 /* Opportunity Tags */
 
 .opportunity-tags {
+    margin-top: auto;
+
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 8px;
 }
 
@@ -1087,7 +1086,7 @@ body {
 ========================= */
 
 .future-banner {
-    padding: 55px;
+    padding: 45px;
 
     background:
         linear-gradient(
@@ -1143,7 +1142,7 @@ body {
 ========================= */
 
 .about-section {
-    padding: 110px 30px;
+    padding: 90px 30px;
 
     background-color: #f7faf9;
 }
@@ -1157,7 +1156,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    gap: 100px;
+    gap: 75px;
 
     align-items: center;
 }
@@ -1217,7 +1216,7 @@ body {
 
     gap: 22px;
 
-    padding: 28px 0;
+    padding: 24px 0;
 
     border-bottom: 1px solid #dfe6e4;
 }
@@ -1246,221 +1245,10 @@ body {
     line-height: 1.7;
 }
 
-/* =========================
-   Vision Section
-========================= */
 
-.vision-section {
-    padding: 110px 30px;
-
-    background-color: white;
-}
-
-.vision-container {
-    width: 100%;
-    max-width: 1200px;
-
-    margin: 0 auto;
-
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-
-    gap: 100px;
-
-    align-items: center;
-}
-
-
-/* =========================
-   Vision Content
-========================= */
-
-.vision-content {
-    max-width: 550px;
-}
-
-.vision-content h2 {
-    margin-bottom: 26px;
-
-    font-size: 46px;
-    line-height: 1.15;
-
-    letter-spacing: -1.5px;
-
-    color: #111;
-}
-
-.vision-content h2 span {
-    display: block;
-
-    color: #0b5964;
-}
-
-.vision-description {
-    margin-bottom: 18px;
-
-    font-size: 16px;
-    line-height: 1.75;
-
-    color: #666;
-}
-
-
-/* =========================
-   Vision Journey
-========================= */
-
-.vision-journey {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 16px;
-}
-
-.vision-stage {
-    padding: 30px;
-
-    border-radius: 18px;
-}
-
-
-/* Current Stage */
-
-.current-stage {
-    background-color: #f7faf9;
-
-    border: 1px solid #e1e8e6;
-}
-
-
-/* Future Stage */
-
-.future-stage {
-    background:
-        linear-gradient(
-            120deg,
-            #074f5c,
-            #0b686d
-        );
-
-    color: white;
-}
-
-
-/* Stage Label */
-
-.vision-stage-label {
-    margin-bottom: 12px;
-
-    font-size: 11px;
-    font-weight: 700;
-
-    letter-spacing: 1.8px;
-
-    color: #0b5964;
-}
-
-.future-stage .vision-stage-label {
-    color: #b9dedb;
-}
-
-
-/* Stage Heading */
-
-.vision-stage h3 {
-    margin-bottom: 12px;
-
-    font-size: 25px;
-
-    color: #111;
-}
-
-.future-stage h3 {
-    color: white;
-}
-
-
-/* Stage Description */
-
-.vision-stage > p:not(.vision-stage-label) {
-    margin-bottom: 22px;
-
-    font-size: 15px;
-    line-height: 1.7;
-
-    color: #666;
-}
-
-.future-stage > p:not(.vision-stage-label) {
-    color: #d8e9e8;
-}
-
-
-/* =========================
-   Vision Tags
-========================= */
-
-.vision-tags {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-}
-
-.vision-tags span {
-    padding: 7px 11px;
-
-    background-color: white;
-
-    border: 1px solid #e0e6e4;
-    border-radius: 20px;
-
-    color: #555;
-
-    font-size: 12px;
-}
-
-.future-stage .vision-tags span {
-    background-color: rgba(255, 255, 255, 0.1);
-
-    border-color: rgba(255, 255, 255, 0.2);
-
-    color: white;
-}
-
-
-/* =========================
-   Vision Direction
-========================= */
-
-.vision-direction {
-    display: flex;
-
-    justify-content: center;
-}
-
-.vision-direction span {
-    width: 38px;
-    height: 38px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background-color: #eef6f5;
-
-    color: #0b5964;
-
-    font-size: 18px;
-}
-
-/* =========================
-   Tablet / Mobile Navbar
-========================= */
+/* =========================================================
+   TABLET / MOBILE NAVIGATION
+   ========================================================= */
 
 @media (max-width: 1100px) {
 
@@ -1469,7 +1257,9 @@ body {
         padding: 15px 24px;
     }
 
-    /* Hamburger */
+
+    /* Hamburger Button */
+
     .menu-toggle {
         display: flex;
         align-items: center;
@@ -1489,12 +1279,16 @@ body {
         z-index: 1101;
     }
 
-    /* Hide desktop button */
+
+    /* Hide desktop App Coming Soon button */
+
     .desktop-nav-button {
         display: none;
     }
 
-    /* Mobile menu */
+
+    /* Mobile Navigation Menu */
+
     .nav-links {
         position: absolute;
 
@@ -1517,20 +1311,22 @@ body {
 
         border-bottom: 1px solid #e5e5e5;
 
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        box-shadow:
+            0 10px 20px rgba(0, 0, 0, 0.08);
 
         z-index: 1100;
 
         max-height: calc(100vh - 80px);
         overflow-y: auto;
-
-        /* Problem Section - Tablet */
     }
 
-    /* Menu is visible only when JavaScript adds active */
+
+    /* JavaScript adds the active class when menu opens */
+
     .nav-links.active {
         display: flex;
     }
+
 
     .nav-links li {
         width: 100%;
@@ -1540,6 +1336,7 @@ body {
 
         flex: none;
     }
+
 
     .nav-links a {
         display: block;
@@ -1553,11 +1350,15 @@ body {
         text-decoration: none;
     }
 
-    /* Mobile App Coming Soon button */
+
+    /* App Coming Soon button inside mobile menu */
+
     .mobile-nav-button {
         display: block;
+
         margin-top: 10px;
     }
+
 
     .mobile-nav-button .nav-button {
         display: block;
@@ -1575,15 +1376,35 @@ body {
     }
 }
 
-/* =========================
-   Responsive Hero - Tablet
-========================= */
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
 
 @media (max-width: 900px) {
+
+    /* -----------------------------------------------------
+       General Section Spacing
+       ----------------------------------------------------- */
+
+    .problem-section,
+    .solution-section,
+    .how-it-works,
+    .opportunities-section,
+    .about-section {
+        padding: 75px 30px;
+    }
+
+
+    /* -----------------------------------------------------
+       Hero Section
+       ----------------------------------------------------- */
 
     .hero {
         min-height: auto;
     }
+
 
     .hero-container {
         grid-template-columns: 1fr;
@@ -1593,6 +1414,7 @@ body {
         gap: 50px;
     }
 
+
     .hero-content {
         max-width: 700px;
 
@@ -1601,191 +1423,211 @@ body {
         text-align: center;
     }
 
+
     .hero h1 {
         font-size: 52px;
 
         letter-spacing: -1.5px;
     }
 
+
     .hero-description {
         margin-left: auto;
         margin-right: auto;
     }
 
+
     .hero-buttons {
         justify-content: center;
     }
+
 
     .hero-visual {
         width: 100%;
     }
 
+
     .opportunity-card {
         max-width: 500px;
     }
+
 
     .concept-label {
         text-align: center;
     }
 
-        .problem-section {
-        padding: 80px 30px;
-    }
+
+    /* -----------------------------------------------------
+       Problem Section
+       ----------------------------------------------------- */
 
     .problem-heading {
-        margin-bottom: 50px;
+        margin-bottom: 42px;
     }
+
 
     .problem-heading h2 {
         font-size: 40px;
     }
 
+
     .problem-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Solution Section - Tablet */
 
-    .solution-section {
-        padding: 85px 30px;
-    }
+    /* -----------------------------------------------------
+       Why ProSwipe / Solution Section
+       ----------------------------------------------------- */
 
     .solution-container {
         grid-template-columns: 1fr;
 
-        gap: 55px;
+        gap: 50px;
     }
+
 
     .solution-content {
         max-width: 700px;
     }
 
+
     .solution-content h2 {
         font-size: 42px;
     }
+
 
     .solution-description {
         max-width: 650px;
     }
 
-    /* How It Works - Tablet */
 
-    .how-it-works {
-        padding: 85px 30px;
-    }
+    /* -----------------------------------------------------
+       How It Works
+       ----------------------------------------------------- */
 
     .how-it-works-heading {
-        margin-bottom: 50px;
+        margin-bottom: 45px;
     }
+
 
     .how-it-works-heading h2 {
         font-size: 40px;
     }
 
+
     .steps-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+
+    /* Connecting line only makes sense on desktop */
 
     .steps-grid::before {
         display: none;
     }
 
-    /* Opportunities - Tablet */
 
-    .opportunities-section {
-        padding: 85px 30px;
-    }
+    /* -----------------------------------------------------
+       Opportunities
+       ----------------------------------------------------- */
 
     .opportunities-heading {
-        margin-bottom: 50px;
+        margin-bottom: 45px;
     }
+
 
     .opportunities-heading h2 {
         font-size: 40px;
     }
 
+
     .opportunities-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
+
+
+    /* Third card fills the second row */
 
     .opportunity-type-card:last-child {
         grid-column: 1 / -1;
     }
 
+
     .opportunity-type-description {
         min-height: auto;
     }
 
+
+    /* -----------------------------------------------------
+       Bigger Picture Banner
+       ----------------------------------------------------- */
+
     .future-banner {
-        padding: 45px;
+        padding: 40px;
     }
+
 
     .future-banner h3 {
         font-size: 34px;
     }
 
-    /* About Section - Tablet */
 
-    .about-section {
-        padding: 85px 30px;
-    }
+    /* -----------------------------------------------------
+       About Section
+       ----------------------------------------------------- */
 
     .about-container {
         grid-template-columns: 1fr;
 
-        gap: 55px;
+        gap: 50px;
     }
+
 
     .about-content {
         max-width: 700px;
     }
 
+
     .about-content h2 {
         font-size: 40px;
     }
+
 
     .about-content > p:not(.section-label) {
         max-width: 680px;
     }
 
+
     .about-snapshot {
-        max-width: 750px;
-    }
-
-    /* Vision Section - Tablet */
-
-    .vision-section {
-        padding: 85px 30px;
-    }
-
-    .vision-container {
-        grid-template-columns: 1fr;
-
-        gap: 55px;
-    }
-
-    .vision-content {
-        max-width: 700px;
-    }
-
-    .vision-content h2 {
-        font-size: 40px;
-    }
-
-    .vision-description {
-        max-width: 680px;
-    }
-
-    .vision-journey {
         max-width: 750px;
     }
 }
 
-/* =========================
-   Responsive Hero - Phone
-========================= */
+
+
+/* =========================================================
+   PHONE
+   ========================================================= */
 
 @media (max-width: 600px) {
+
+    /* -----------------------------------------------------
+       General Section Spacing
+       ----------------------------------------------------- */
+
+    .problem-section,
+    .solution-section,
+    .how-it-works,
+    .opportunities-section,
+    .about-section {
+        padding: 60px 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       Hero Section
+       ----------------------------------------------------- */
 
     .hero-container {
         padding: 50px 20px;
@@ -1793,37 +1635,42 @@ body {
         gap: 40px;
     }
 
-    .hero-badge {
-        font-size: 12px;
 
+    .hero-badge {
         padding: 7px 12px;
 
         margin-bottom: 18px;
+
+        font-size: 12px;
     }
+
 
     .hero-motto {
-        font-size: 14px;
-
         margin-bottom: 12px;
+
+        font-size: 14px;
     }
 
-    .hero h1 {
-        font-size: 42px;
 
+    .hero h1 {
+        margin-bottom: 20px;
+
+        font-size: 42px;
         line-height: 1.08;
 
         letter-spacing: -1px;
-
-        margin-bottom: 20px;
     }
+
 
     .hero-description {
-        font-size: 16px;
-
-        line-height: 1.6;
-
         margin-bottom: 28px;
+
+        font-size: 16px;
+        line-height: 1.6;
     }
+
+
+    /* Stack Hero buttons vertically */
 
     .hero-buttons {
         flex-direction: column;
@@ -1833,6 +1680,7 @@ body {
         gap: 12px;
     }
 
+
     .primary-button,
     .secondary-button {
         width: 100%;
@@ -1840,49 +1688,63 @@ body {
         text-align: center;
     }
 
+
+    /* Hero opportunity preview */
+
     .opportunity-card {
         width: 100%;
-
         max-width: 100%;
 
         padding: 22px;
     }
 
+
     .card-top {
         margin-bottom: 28px;
     }
+
 
     .card-content h2 {
         font-size: 25px;
     }
 
+
     .swipe-area {
         gap: 8px;
     }
+
 
     .swipe-area span {
         font-size: 11px;
     }
 
+
     .concept-label {
+        padding: 0 10px;
+
         font-size: 11px;
 
-        padding: 0 10px;
+        text-align: center;
     }
 
-    /* Problem Section - Phone */
 
-    .problem-section {
-        padding: 70px 20px;
-    }
-
-    .problem-heading {
-        margin-bottom: 40px;
-    }
+    /* -----------------------------------------------------
+       Shared Section Label
+       ----------------------------------------------------- */
 
     .section-label {
         font-size: 12px;
     }
+
+
+    /* -----------------------------------------------------
+       Problem Section
+       ----------------------------------------------------- */
+
+    .problem-heading {
+        margin-bottom: 35px;
+    }
+
 
     .problem-heading h2 {
         font-size: 34px;
@@ -1890,9 +1752,11 @@ body {
         letter-spacing: -1px;
     }
 
+
     .problem-intro {
         font-size: 16px;
     }
+
 
     .problem-grid {
         grid-template-columns: 1fr;
@@ -1900,25 +1764,27 @@ body {
         gap: 16px;
     }
 
+
     .problem-card {
         min-height: auto;
 
         padding: 24px;
     }
 
+
     .problem-number {
-        margin-bottom: 22px;
+        margin-bottom: 20px;
     }
 
-    /* Solution Section - Phone */
 
-    .solution-section {
-        padding: 70px 20px;
-    }
+    /* -----------------------------------------------------
+       Why ProSwipe / Solution Section
+       ----------------------------------------------------- */
 
     .solution-container {
-        gap: 40px;
+        gap: 35px;
     }
+
 
     .solution-content h2 {
         font-size: 35px;
@@ -1926,40 +1792,45 @@ body {
         letter-spacing: -1px;
     }
 
+
     .solution-description {
         font-size: 16px;
     }
+
 
     .solution-feature {
         grid-template-columns: 50px 1fr;
 
         gap: 16px;
 
-        padding: 24px 0;
+        padding: 22px 0;
     }
+
 
     .solution-number {
         width: 42px;
         height: 42px;
     }
 
+
     .solution-feature h3 {
         font-size: 19px;
     }
+
 
     .solution-feature p {
         font-size: 15px;
     }
 
-    /* How It Works - Phone */
 
-    .how-it-works {
-        padding: 70px 20px;
-    }
+    /* -----------------------------------------------------
+       How It Works
+       ----------------------------------------------------- */
 
     .how-it-works-heading {
-        margin-bottom: 40px;
+        margin-bottom: 35px;
     }
+
 
     .how-it-works-heading h2 {
         font-size: 34px;
@@ -1967,9 +1838,11 @@ body {
         letter-spacing: -1px;
     }
 
+
     .how-it-works-heading > p:last-child {
         font-size: 16px;
     }
+
 
     .steps-grid {
         grid-template-columns: 1fr;
@@ -1977,9 +1850,11 @@ body {
         gap: 16px;
     }
 
+
     .step-card {
         padding: 24px;
     }
+
 
     .step-number {
         width: 44px;
@@ -1988,19 +1863,20 @@ body {
         margin-bottom: 20px;
     }
 
+
     .step-card h3 {
         font-size: 19px;
     }
 
-    /* Opportunities - Phone */
 
-    .opportunities-section {
-        padding: 70px 20px;
-    }
+    /* -----------------------------------------------------
+       Opportunities
+       ----------------------------------------------------- */
 
     .opportunities-heading {
-        margin-bottom: 40px;
+        margin-bottom: 35px;
     }
+
 
     .opportunities-heading h2 {
         font-size: 34px;
@@ -2008,9 +1884,11 @@ body {
         letter-spacing: -1px;
     }
 
+
     .opportunities-heading > p:last-child {
         font-size: 16px;
     }
+
 
     .opportunities-grid {
         grid-template-columns: 1fr;
@@ -2020,52 +1898,63 @@ body {
         margin-bottom: 40px;
     }
 
+
+    /* Reset tablet full-row behaviour */
+
     .opportunity-type-card:last-child {
         grid-column: auto;
     }
+
 
     .opportunity-type-card {
         padding: 24px;
     }
 
+
     .opportunity-type-number {
-        margin-bottom: 22px;
+        margin-bottom: 20px;
     }
+
 
     .opportunity-type-card h3 {
         font-size: 21px;
     }
 
+
     .opportunity-type-description {
-        margin-bottom: 22px;
+        margin-bottom: 20px;
     }
 
 
-    /* Future Banner */
+    /* -----------------------------------------------------
+       Bigger Picture Banner
+       ----------------------------------------------------- */
 
     .future-banner {
-        padding: 35px 25px;
+        padding: 32px 24px;
 
         border-radius: 18px;
     }
+
 
     .future-banner h3 {
         font-size: 30px;
     }
 
+
     .future-banner-content > p:last-child {
         font-size: 15px;
     }
 
-    /* About Section - Phone */
 
-    .about-section {
-        padding: 70px 20px;
-    }
+    /* -----------------------------------------------------
+       About Section
+       ----------------------------------------------------- */
 
     .about-container {
-        gap: 40px;
+        gap: 35px;
     }
+
 
     .about-content h2 {
         font-size: 34px;
@@ -2073,55 +1962,27 @@ body {
         letter-spacing: -1px;
     }
 
+
     .about-content > p:not(.section-label) {
         font-size: 15px;
     }
+
 
     .snapshot-item {
         grid-template-columns: 42px 1fr;
 
         gap: 14px;
 
-        padding: 24px 0;
+        padding: 22px 0;
     }
+
 
     .snapshot-item h3 {
         font-size: 19px;
     }
 
+
     .snapshot-item p {
-        font-size: 15px;
-    }
-
-    /* Vision Section - Phone */
-
-    .vision-section {
-        padding: 70px 20px;
-    }
-
-    .vision-container {
-        gap: 40px;
-    }
-
-    .vision-content h2 {
-        font-size: 34px;
-
-        letter-spacing: -1px;
-    }
-
-    .vision-description {
-        font-size: 15px;
-    }
-
-    .vision-stage {
-        padding: 24px;
-    }
-
-    .vision-stage h3 {
-        font-size: 22px;
-    }
-
-    .vision-stage > p:not(.vision-stage-label) {
         font-size: 15px;
     }
 }

@@ -1416,6 +1416,133 @@ body {
 }
 
 
+/* =========================
+   Contact / Coming Soon
+========================= */
+
+.contact-section {
+    padding: 90px 30px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #074f5c,
+            #0b686d
+        );
+
+    text-align: center;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 800px;
+
+    margin: 0 auto;
+}
+
+.contact-section .section-label {
+    color: #b9dedb;
+}
+
+.contact-section h2 {
+    margin-bottom: 20px;
+
+    font-size: 48px;
+    line-height: 1.15;
+
+    letter-spacing: -1.5px;
+
+    color: white;
+}
+
+.contact-section h2 span {
+    color: #f2c94c;
+}
+
+.contact-description {
+    max-width: 650px;
+
+    margin: 0 auto 32px;
+
+    color: #d8e9e8;
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   Contact Buttons
+========================= */
+
+.contact-buttons {
+    display: flex;
+
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.contact-primary-button,
+.contact-secondary-button {
+    display: inline-block;
+
+    padding: 14px 22px;
+
+    border-radius: 7px;
+
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.contact-primary-button {
+    background-color: #f2c94c;
+
+    color: #111;
+}
+
+.contact-primary-button:hover {
+    transform: translateY(-2px);
+
+    background-color: #f5d76e;
+}
+
+.contact-secondary-button {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    color: white;
+
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.contact-secondary-button:hover {
+    transform: translateY(-2px);
+
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================
+   Contact Motto
+========================= */
+
+.contact-motto {
+    margin-top: 34px;
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+}
+
+
 /* =========================================================
    TABLET / MOBILE NAVIGATION
    ========================================================= */
@@ -1792,6 +1919,17 @@ body {
 
     .team-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* Contact Section - Tablet */
+
+    .contact-section {
+        padding: 75px 30px;
+    }
+
+    .contact-section h2 {
+        font-size: 40px;
     }
 }
 
@@ -2214,5 +2352,33 @@ body {
         height: 56px;
 
         margin-bottom: 20px;
+    }
+
+
+    /* Contact Section - Phone */
+
+    .contact-section {
+        padding: 60px 20px;
+    }
+
+    .contact-section h2 {
+        font-size: 34px;
+
+        letter-spacing: -1px;
+    }
+
+    .contact-description {
+        font-size: 15px;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+    }
+
+    .contact-primary-button,
+    .contact-secondary-button {
+        width: 100%;
+
+        text-align: center;
     }
 }
